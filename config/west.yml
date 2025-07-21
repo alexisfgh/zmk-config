@@ -1,14 +1,35 @@
 manifest:
-  defaults:
-    revision: v0.2
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    # Additional modules containing boards/shields/custom code can be listed here as well
-    # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
+    - name: infely
+      url-base: https://github.com/infely  
+    - name: kevinpastor
+      url-base: https://github.com/kevinpastor
+    # nice_oled
+    # - name: mctechnology17
+    #   url-base: https://github.com/mctechnology17
+    # bongo cat
+    # - name: ANDRESDEV-CO
+    #   url-base: https://github.com/ANDRESDEV-CO
   projects:
     - name: zmk
       remote: zmkfirmware
+      revision: main
       import: app/west.yml
+    - name: nice-view-battery
+      remote: infely
+      revision: main
+    - name: nice-view-elemental
+      remote: kevinpastor
+      revision: main
+    # nice_oled
+    # - name: zmk-nice-oled
+    #   remote: mctechnology17
+    #   revision: main
+    # bongo cat
+    # - name: nice-view-mod
+    #   remote: ANDRESDEV-CO
+    #   revision: custom-animation
   self:
     path: config
