@@ -24,7 +24,7 @@
         fast_encoder: fast_encoder {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
-            bindings = <&kp KC_VOLD>, <&kp KC_VOLU>;
+            bindings = <&kp C_VOL_DN>, <&kp C_VOL_UP>;
         };*/  
 
         rgb_encoder_bri: rgb_encoder_bri {
