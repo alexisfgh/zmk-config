@@ -15,11 +15,17 @@
 
 / {
     behaviors {
-        fast_encoder: fast_encoder {
+        /*fast_encoder: fast_encoder {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&macro_fast_vol_dn>, <&macro_fast_vol_up>;
-        };        
+        };*/        
+
+        fast_encoder: fast_encoder {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&kp KC_VOLD>, <&kp KC_VOLU>;
+        };*/  
 
         rgb_encoder_bri: rgb_encoder_bri {
             compatible = "zmk,behavior-sensor-rotate";
