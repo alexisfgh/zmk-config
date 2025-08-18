@@ -106,20 +106,20 @@
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                               ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
 // |    BT_NXT   |     BT1     |     BT2     |     BT3     |     BT4     |     BT5     |                               |    DBT1     |    DBT2     |    DBT3     |    DBT4     |    DBT5     |    BTCLR    |
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤                               ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-// |   OUT_USB   |   RGB_HUD   |   RGB_HUI   |   RGB_SAD   |   RGB_SAI   |   RGB_EFF   |                               |    EP_ON    |             |             |             |             |             |
+// |   OUT_USB   |   RGB_HUD   |   RGB_HUI   |   RGB_SAD   |   RGB_SAI   |   RGB_EFF   |                               |             |             |             |             |             |             |
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤                               ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-// |   OUT_BLE   |   RGB_BRD   |   RGB_BRI   |             |             |             |                               |    EP_OFF   |             |             |             |             |             |
+// |   OUT_BLE   |   RGB_BRD   |   RGB_BRI   |             |             |             |                               |             |             |             |             |             |             |
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────╮    ╭────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-// |   OUT_TOG   |   RGB_SPD   |   RGB_SPI   |             |             |             |   RGB_TOG   |    |            |    EP_TOG   |             |             |             |             |  sys_reset  |
+// |   OUT_TOG   |   RGB_SPD   |   RGB_SPI   |             |             |             |   RGB_TOG   |    |            |             |             |             |             |             |  sys_reset  |
 // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────├─────────────┤    ├────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯
 //                             |             |             |             |             |             |    |            |             |             |             |             |
 //                             ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯    ╰────────────┴─────────────┴─────────────┴─────────────┴─────────────╯
                 display-name = "adjust";
                 bindings = <
             &bt BT_NXT          &bt BT_SEL 0       &bt BT_SEL 1       &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4                                   &bt BT_DISC 0       &bt BT_DISC 1     &bt BT_DISC 2     &bt BT_DISC 3     &bt BT_DISC 4     &bt BT_CLR
-            &out OUT_USB        &rgb_ug RGB_BRD    &rgb_ug RGB_BRI    &none           &none           &none                                          &ext_power EP_ON    &none             &none             &none             &none             &none
-            &out OUT_BLE        &rgb_ug RGB_HUD    &rgb_ug RGB_HUI    &rgb_ug RGB_SAD &rgb_ug RGB_SAI &rgb_ug RGB_EFF                                &ext_power EP_OFF   &none             &none             &none             &none             &none
-            &out OUT_TOG        &rgb_ug RGB_SPD    &rgb_ug RGB_SPI    &none           &none           &none    &rgb_ug RGB_TOG               &none   &ext_power EP_TOG   &none             &none             &none             &none             &sys_reset
+            &out OUT_USB        &rgb_ug RGB_BRD    &rgb_ug RGB_BRI    &none           &none           &none                                          &none               &none             &none             &none             &none             &none
+            &out OUT_BLE        &rgb_ug RGB_HUD    &rgb_ug RGB_HUI    &rgb_ug RGB_SAD &rgb_ug RGB_SAI &rgb_ug RGB_EFF                                &none               &none             &none             &none             &none             &none
+            &out OUT_TOG        &rgb_ug RGB_SPD    &rgb_ug RGB_SPI    &none           &none           &none    &rgb_ug RGB_TOG               &none   &none               &none             &none             &none             &none             &sys_reset
                                             &none           &none           &none           &none    &none                    &none  &none &none &none &none
             >;
         };
