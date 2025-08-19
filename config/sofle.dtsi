@@ -1,0 +1,30 @@
+/ {
+    chosen {
+        zmk,display = &oled;
+    };
+
+    oled: oled {
+        compatible = "ssd1306,oled";
+        width = <128>;
+        height = <32>;
+        segment-offset = <0>;
+        page-offset = <0>;
+        display-offset = <0>;
+        inversion = <0>;
+
+        status {
+            compatible = "zmk,display-status";
+            label = "Status Display";
+
+            // Widget de logo
+            logo {
+                compatible = "zmk,widget-logo";
+            };
+
+            // Widget de capa activa
+            layer {
+                compatible = "zmk,widget-layer-status";
+            };
+        };
+    };
+};
