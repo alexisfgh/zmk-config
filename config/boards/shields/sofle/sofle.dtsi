@@ -106,6 +106,27 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5) RC(4,6) RC(3,6) RC(3,7) 
         com-sequential;
         inversion-on;
         prechargep = <0x22>;
+
+        status {
+            compatible = "zmk,display-status";
+            label = "Status Display";
+
+            // Widget de logo
+            logo {
+                compatible = "zmk,widget-logo";
+            };
+
+            // Widget de capa activa
+            layer {
+                compatible = "zmk,widget-layer-status";
+            };
+
+            // Widget de batería
+            battery {
+                compatible = "zmk,widget-battery";
+            };
+
+        };
     };
 };
 // rgb,SPI
