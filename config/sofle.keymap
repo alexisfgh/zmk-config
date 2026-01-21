@@ -32,7 +32,7 @@
     };
 
     keymap {
-        compatible = "zmk,keymap";
+        compatible = "zmk,keymap,behavior-sensor-rotary-encoder";
 
         default_layer {
             display-name = "default";
