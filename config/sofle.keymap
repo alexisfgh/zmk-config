@@ -10,10 +10,6 @@
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/outputs.h>
-#include <dt-bindings/zmk/pointing.h>
-
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 1500  // default: 600
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
 
 #define BASE 0
 #define LOWER 1
@@ -31,18 +27,8 @@
         };
     };
 
-    /* --- Comportamiento para encoder: scroll del ratón --- */
-    behaviors {
-        encoder_scroll: encoder_scroll {
-            compatible = "zmk,zmk,behavior-sensor-rotate-inc-dec";
-            #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
-            tap-ms = <20>;
-        };
-    };
-
     keymap {
-        compatible = "zmk,keymap,zmk,behavior-sensor-rotate-inc-dec";
+        compatible = "zmk,keymap";
 
         default_layer {
             display-name = "default";
@@ -65,8 +51,7 @@
                           &kp LCTRL &kp LALT &kp LGUI  &mo LOWER  &kp RET     &kp SPACE         &mo RAISE  &kp RALT   &kp GLOBE    &kp RGUI
                         >; 
 
-            //sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &encoder_scroll>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
         };
 
         lower_layer {
