@@ -32,7 +32,7 @@
     };
 
     keymap {
-        compatible = "zmk,keymap,behavior-sensor-rotary-encoder";
+        compatible = "zmk,keymap";
 
         default_layer {
             display-name = "default";
@@ -56,7 +56,7 @@
                         >; 
 
             //sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp MS_WH_UP MS_WH_DOWN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_mouse scroll-y>;
         };
 
         lower_layer {
