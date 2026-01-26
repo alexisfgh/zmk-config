@@ -21,17 +21,6 @@
 #define ADJUST 3
 
 / {
-    
-    behaviors {
-        encoder_scroll: encoder_scroll {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            /* clockwise (CW) -> SCRL_UP ; counter-clockwise (CCW) -> SCRL_DOWN
-               Cambia el orden si lo quieres invertido. */
-            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
-            tap-ms = <20>;
-        };
-    };
 
    // Activate ADJUST layer by pressing raise and lower
     conditional_layers {
@@ -39,6 +28,18 @@
         adjust_layer {
             if-layers = <LOWER RAISE>;
             then-layer = <ADJUST>;
+        };
+    };
+
+    /* --- Comportamiento para encoder: scroll del ratón --- */
+    behaviors {
+        encoder_scroll: encoder_scroll {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            /* bindings: CW -> SCRL_UP, CCW -> SCRL_DOWN
+            Si quieres invertir el sentido, cambia el orden. */
+            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+            tap-ms = <20>;
         };
     };
 
