@@ -34,7 +34,7 @@
     /* --- Comportamiento para encoder: scroll del ratón --- */
     behaviors {
         encoder_scroll: encoder_scroll {
-            compatible = "zmk,behavior-sensor-rotate-variable";
+            compatible = "zmk,zmk,behavior-sensor-rotate-inc-dec";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
             tap-ms = <20>;
@@ -42,7 +42,7 @@
     };
 
     keymap {
-        compatible = "zmk,keymap";
+        compatible = "zmk,keymap,zmk,behavior-sensor-rotate-inc-dec";
 
         default_layer {
             display-name = "default";
