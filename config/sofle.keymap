@@ -34,10 +34,8 @@
     /* --- Comportamiento para encoder: scroll del ratón --- */
     behaviors {
         encoder_scroll: encoder_scroll {
-            compatible = "zmk,behavior-sensor-rotate";
+            compatible = "zmk,behavior-sensor-rotate-variable";
             #sensor-binding-cells = <0>;
-            /* bindings: CW -> SCRL_UP, CCW -> SCRL_DOWN
-            Si quieres invertir el sentido, cambia el orden. */
             bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
             tap-ms = <20>;
         };
